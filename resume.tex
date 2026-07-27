@@ -24,6 +24,7 @@
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{4.1pt}
 
 \addtolength{\oddsidemargin}{-0.6in}
 \addtolength{\evensidemargin}{-0.5in}
@@ -37,7 +38,7 @@
 \setlength{\tabcolsep}{0in}
 
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large\bfseries
+  \vspace{-4pt}\raggedright\large\bfseries
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 % Keep PDF text machine-readable for applicant tracking systems.
@@ -55,9 +56,18 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+\newcommand{\resumeEducationHeading}[5]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \\
+      \textit{\small #2} & \textit{\small #3} \\
+      \textit{\small #4} & \textit{\small #5} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
 \newcommand{\resumeProjectHeading}[2]{
   \item
-    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
       \small #1 & \textbf{\small #2} \\
     \end{tabular*}\vspace{-7pt}
 }
@@ -77,74 +87,82 @@
   \small
   \href{tel:+12179740166}{\raisebox{-0.1\height}\faPhone\ 217-974-0166} ~
   \href{mailto:career@cbcicada.com}{\raisebox{-0.2\height}\faEnvelope\ \underline{career@cbcicada.com}} ~
-  \href{https://www.linkedin.com/in/hongming-qiu-bb8b73292/}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/hongming-qiu-bb8b73292}}
+  \href{https://www.linkedin.com/in/hongming-qiu-bb8b73292/}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/hongming-qiu-bb8b73292}} ~
+  \href{https://github.com/CBCicada}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/CBCicada}}
   \vspace{-8pt}
 \end{center}
 
 \section{Education}
 \resumeSubHeadingListStart
+  \resumeEducationHeading
+    {University of Illinois Urbana-Champaign}
+    {M.S. in Electrical and Computer Engineering (Thesis)}{Expected May 2028}
+    {B.S. in Computer Engineering $|$ Overall GPA: 3.99/4.00}{May 2026}
+\resumeSubHeadingListEnd
+
+\section{Research Experience}
+\resumeSubHeadingListStart
   \resumeSubheading
-    {University of Illinois Urbana-Champaign}{May 2026}
-    {B.S. in Computer Engineering $|$ GPA: 4.0/4.0 $|$ Dean's List}{}
+    {Kernel Security Research Assistant}{September 2025 -- Present}
+    {UIUC $|$ Advisor: Prof. Tianyin Xu $|$ In collaboration with IBM Research}{}
   \resumeItemListStart
-    \resumeItem{\textbf{Completed Coursework:} Computer Systems Engineering (ECE 391), Digital Systems Laboratory (ECE 385), Computer Security I (ECE 422), Communication Networks (ECE 438), Applied Parallel Programming (ECE 408)}
+    \resumeItem{Designed and implemented Linux IMA extensions for policy-controlled \textbf{eBPF measurement and appraisal}, including TPM-backed attestation, PKCS\#7 signature verification, and policy predicates over program and attachment types.}
+    \resumeItem{Built \textbf{race-safe reappraisal and revocation} of resident eBPF programs using retained integrity metadata and RCU; removed references across links, pins, file descriptors, tail-call maps, and cgroup attachments.}
+    \resumeItem{Integrated signed loading and recovery with \textbf{Cilium}; evaluated vulnerable datapath remediation and a concealed eBPF rootkit with zero residual programs across 34 purge configurations. First-author manuscript under review at ATC 2026.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {LLVM-Based Static Malware Detection Research}{February 2025 -- Present}
+    {Independent Research $|$ Three-person team}{}
+  \resumeItemListStart
+    \resumeItem{Co-developed an LLVM-based polymorphic compilation framework for evaluating \textbf{static antivirus evasion} across Windows and Linux targets.}
+    \resumeItem{Designed the original \textbf{EliminateIAT} pass, rewriting imported calls through runtime LoadLibrary/GetProcAddress stubs while preserving LLVM invoke control flow and variadic call sites; led MSVC/LLVM toolchain integration for complex Windows codebases.}
+    \resumeItem{Designed \textbf{Masquerade} to copy sections and imports from benign Windows programs and keep them from being removed during linking; improved string obfuscation to support complex access patterns.}
+    \resumeItem{Evaluated 1,160 artifacts from seven malware families against up to 76 VirusTotal engines; measured \textbf{95.5\% mean inter-build byte divergence} and sub-1\% mean detection for the strongest pass combinations.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Selected Systems Project}
+\vspace{-5pt}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{Out-of-Order RISC-V Processor} $|$ \emph{SystemVerilog, ECE 411, Team of 3}}{Spring 2026}
+  \resumeItemListStart
+    \resumeItem{Co-designed and verified a \textbf{2-way superscalar RV32IM processor} with explicit register renaming, split load/store queues, store forwarding, pipelined caches, and early branch recovery.}
+    \resumeItem{Implemented \textbf{gshare branch prediction and return-address prediction}, reducing branch mispredictions from about \textbf{60\% to 10\%}; sustained \textbf{over 1 IPC} on compression and ray-tracing benchmarks at 500 MHz within a 300,000 $\mu$m$^2$ area limit.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Teaching \& Leadership}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {ECE 391 Course Assistant}{January 2025 -- Present}
+    {ECE Department, University of Illinois Urbana-Champaign}{}
+  \resumeItemListStart
+    \resumeItem{Mentored \textbf{20+ students weekly} in a class of 150+, debugging RISC-V operating systems spanning process management, pipe-based inter-process communication, and custom device drivers.}
+    \resumeItem{Adapted Doom and Rogue to run on the course's RISC-V operating system as end-to-end workloads for student kernels.}
+    \resumeItem{Hardened staff reference binaries against solution extraction through binary obfuscation.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Admin \& Purple Team Lead}{September 2023 -- Present}
+    {SIGPwny, cybersecurity club at the University of Illinois Urbana-Champaign}{}
+  \resumeItemListStart
+    \resumeItem{Authored \textbf{25+ reverse-engineering and exploitation challenges} for UIUCTF and SIGPwny; led advanced security workshops for 50+ club members.}
+    \resumeItem{Competed on first-place teams at \textbf{TracerFIRE 12 and 13}, solving reverse-engineering and digital-forensics challenges.}
+    \resumeItem{Built and administered a Proxmox security range with \textbf{20+ VMs}, segmented attacker and practice networks, a pfSense firewall, and VPN access.}
   \resumeItemListEnd
 \resumeSubHeadingListEnd
 
 \section{Technical Skills}
 \begin{itemize}[leftmargin=0.15in,label={}]
   \small{\item{
-    \textbf{Programming Languages:} C (with WinAPI), C++, Assembly (RISC-V and x86), LLVM, SystemVerilog, Python, Bash \\
-    \textbf{Tools:} GDB, Valgrind, Wireshark, Git, Windows, Linux, Proxmox, Active Directory, Sysinternals, Volatility, ELK stack, pfSense, OpenWrt, LXC, Docker \\
-    \textbf{Certifications:} OffSec Certified Professional (OSCP), OSCP+, Certified CyberDefender (CCD)
+    \textbf{Languages:} C, C++, Python, Bash, x86 and RISC-V Assembly, SystemVerilog \\
+    \textbf{Systems:} Linux kernel, eBPF, LLVM, IMA, TPM, RCU, Cilium, operating systems, container networking \\
+    \textbf{Security:} Program analysis, reverse engineering, binary exploitation, exploit development \\
+    \textbf{Certifications:} OSED, OSCP+, Certified CyberDefender (CCD)
   }}
 \end{itemize}
 \vspace{-16pt}
-
-\section{Experience}
-\resumeSubHeadingListStart
-  \resumeSubheading
-    {Kernel Security Research Assistant}{September 2025 -- Present}
-    {CS Department, University of Illinois Urbana-Champaign}{}
-  \resumeItemListStart
-    \resumeItem{Conduct research on \textbf{TPM-backed measurement and appraisal of eBPF programs}, in collaboration with Prof. Tianyin Xu and IBM Research.}
-    \resumeItem{Conduct research on \textbf{kernel control flow integrity measures}, in collaboration with Prof. Tianyin Xu with guidance from Ph.D. mentor Wentao Zhang.}
-  \resumeItemListEnd
-
-  \resumeSubheading
-    {ECE 391 Course Assistant}{January 2025 -- Present}
-    {ECE Department, University of Illinois Urbana-Champaign}{}
-  \resumeItemListStart
-    \resumeItem{Implemented a \textbf{RISC-V operating system from scratch}, including process management, inter-process communication via pipes, and custom device drivers, allowing \textbf{classic games (Doom, Rogue)} to run on the OS.}
-    \resumeItem{Assisted \textbf{20+ students weekly} from a class of 150+ students during office hours, resolving \textbf{95\%+ of issues} and mentoring peers, including other course assistants, on complex OS concepts and debugging.}
-    \resumeItem{\textbf{Obfuscated reference binaries} to deter students from reverse engineering provided solutions.}
-  \resumeItemListEnd
-\resumeSubHeadingListEnd
-
-\section{Extracurriculars}
-\resumeSubHeadingListStart
-  \resumeSubheading
-    {Admin \& Purple Team Lead}{September 2023 -- Present}
-    {SIGPwny, cybersecurity club at the University of Illinois Urbana-Champaign}{}
-  \resumeItemListStart
-    \resumeItem{First-place team in \textbf{TracerFIRE 12 and 13}. Participated in \textbf{8+ CTF competitions} each year, solving challenges in categories including \textbf{reverse engineering and digital forensics}.}
-    \resumeItem{Authored \textbf{25+} reverse engineering and exploitation challenges for UIUCTF and the SIGPwny platform.}
-    \resumeItem{Led workshops on advanced topics (reverse engineering, OSINT, forensics) for \textbf{50+ club members}.}
-    \resumeItem{Developed \textbf{custom Proxmox virtual machine infrastructure} to host attacker and practice networks, configuring \textbf{20+ VMs, a pfSense firewall, and a VPN server} on one host machine.}
-    \resumeItem{Enhanced \textbf{deployment scripts}, DNS configs, and Discord bot for the SIGPwny platform, improving uptime and maintainability.}
-  \resumeItemListEnd
-\resumeSubHeadingListEnd
-
-\section{Projects}
-\vspace{-5pt}
-\resumeSubHeadingListStart
-  \resumeProjectHeading
-    {\textbf{Advanced Command \& Control Framework} $|$ \emph{Personal Project (Team of 2)}}{February 2025 -- Present}
-  \resumeItemListStart
-    \resumeItem{Co-developed a next-generation C2 platform leveraging a modern tech stack: \textbf{Vue.js + Electron} for a futuristic client UI, \textbf{Python + Flask} for the team server, and \textbf{C++ shellcode} for the beacon/implant.}
-    \resumeItem{Designed and implemented the \textbf{C++ beacon} without STL to minimize size, enabling stealthy deployments; integrated \textbf{LLVM-based polymorphic obfuscation} for compile-time evasion.}
-    \resumeItem{Built components of the \textbf{modular Python team server} supporting dynamic module loading, per-operation rule sets, and custom protocol parsers for flexibility in operations.}
-  \resumeItemListEnd
-\resumeSubHeadingListEnd
 
 \end{document}
