@@ -109,15 +109,15 @@
     \resumeItem{Designed and implemented Linux IMA extensions for policy-controlled \textbf{eBPF measurement and appraisal}, including TPM-backed attestation, PKCS\#7 signature verification, and policy predicates over program and attachment types.}
     \resumeItem{Built \textbf{race-safe reappraisal and revocation} of resident eBPF programs using retained integrity metadata and RCU; removed references across links, pins, file descriptors, tail-call maps, and cgroup attachments.}
     \resumeItem{Integrated signed loading and recovery with \textbf{Cilium}; evaluated vulnerable datapath remediation and a concealed eBPF rootkit with zero residual programs across 34 purge configurations; wrote the resulting manuscript as first author.}
-    \resumeItem{Contributed to ongoing research evaluating flexible \textbf{Linux kernel control-flow integrity} enforcement with eBPF by reproducing OS-CFI's origin-sensitive design.}
+    \resumeItem{Reproducing OS-CFI's origin-sensitive design to evaluate \textbf{eBPF-based Linux kernel control-flow integrity}.}
   \resumeItemListEnd
 
   \resumeSubheading
     {LLVM-Based Static Malware Detection Research}{February 2025 -- Present}
     {Independent Research $|$ Three-person team}{\textnormal{\href{https://github.com/skid-works/discombobulator-llvm}{\underline{[code]}}}}
   \resumeItemListStart
-    \resumeItem{Co-developed an LLVM-based polymorphic compilation framework for evaluating \textbf{static antivirus evasion} across Windows and Linux targets.}
-    \resumeItem{Designed the original \textbf{EliminateIAT} pass, rewriting imported calls through runtime LoadLibrary/GetProcAddress stubs while preserving LLVM invoke control flow and variadic call sites; led MSVC/LLVM toolchain integration for complex Windows codebases.}
+    \resumeItem{Co-developed a polymorphic LLVM framework to evaluate \textbf{static antivirus evasion} on Windows and Linux.}
+    \resumeItem{Designed \textbf{EliminateIAT} to rewrite imports through LoadLibrary/GetProcAddress stubs, preserving invoke control flow and variadic calls; led MSVC/LLVM integration for complex Windows codebases.}
     \resumeItem{Designed \textbf{Masquerade} to copy sections and imports from benign Windows programs and keep them from being removed during linking; improved string obfuscation to support complex access patterns.}
     \resumeItem{Evaluated 1,160 artifacts from seven malware families against up to 76 VirusTotal engines; measured \textbf{95.5\% mean inter-build byte divergence} and sub-1\% mean detection for the strongest pass combinations.}
   \resumeItemListEnd
@@ -127,15 +127,16 @@
 \vspace{-5pt}
 \resumeSubHeadingListStart
   \resumeProjectHeading
+    {\textbf{RISC-V Operating System Kernel} $|$ \emph{C/C++, RISC-V Assembly}}{2024; 2026 -- Present}
+  \resumeItemListStart
+    \resumeItem{Built a C kernel (ECE 391) with processes, IPC, and drivers; ported Doom and Rogue to student-built kernels.}
+    \resumeItem{Porting and redesigning the kernel in \textbf{C++23} for ECE 498OS, introducing \textbf{RAII synchronization}, smart-pointer ownership, kernel-backed C++ runtime support, and polymorphic I/O interfaces.}
+  \resumeItemListEnd
+  \resumeProjectHeading
     {\textbf{Out-of-Order RISC-V Processor} $|$ \emph{SystemVerilog, ECE 411, Team of 3}}{Spring 2026}
   \resumeItemListStart
     \resumeItem{Co-designed and verified a \textbf{2-way superscalar RV32IM processor} with explicit register renaming, split load/store queues, store forwarding, pipelined caches, and early branch recovery.}
-    \resumeItem{Implemented \textbf{gshare branch prediction and return-address prediction}, reducing branch mispredictions from about \textbf{60\% to 10\%}; sustained \textbf{over 1 IPC} on compression and ray-tracing benchmarks at 500 MHz within a 300,000 $\mu$m$^2$ area limit.}
-  \resumeItemListEnd
-  \resumeProjectHeading
-    {\textbf{RISC-V Operating System Kernel} $|$ \emph{C, RISC-V Assembly, ECE 391}}{Fall 2024}
-  \resumeItemListStart
-    \resumeItem{Built a kernel with process management, IPC, and drivers; ported Doom and Rogue to run on student-built kernels.}
+    \resumeItem{Implemented \textbf{gshare and return-address prediction}, reducing branch mispredictions from about \textbf{60\% to 10\%}; sustained \textbf{over 1 IPC} on compression and ray-tracing benchmarks at 500 MHz within 300,000 $\mu$m$^2$.}
   \resumeItemListEnd
 \resumeSubHeadingListEnd
 
@@ -145,7 +146,7 @@
     {ECE 391 Teaching Assistant}{January 2025 -- Present}
     {ECE Department, University of Illinois Urbana-Champaign}{}
   \resumeItemListStart
-    \resumeItem{Promoted to Teaching Assistant in August 2026 after three semesters as an undergraduate Course Assistant; support \textbf{20+ students weekly} in office hours for a 250+ student RISC-V operating systems course.}
+    \resumeItem{Promoted from Course Assistant to TA; support \textbf{20+ students weekly} in a 250+ student RISC-V OS course.}
     \resumeItem{Cut autograder runtime in \textbf{half} across all test cases by removing redundant runs and caching builds.}
   \resumeItemListEnd
 
@@ -154,7 +155,7 @@
     {SIGPwny, cybersecurity club at the University of Illinois Urbana-Champaign}{}
   \resumeItemListStart
     \resumeItem{Authored \textbf{25+ reverse-engineering and exploitation challenges} for UIUCTF and SIGPwny; led advanced security workshops for 50+ club members.}
-    \resumeItem{Built and administered a Proxmox security range with \textbf{20+ VMs}, segmented attacker and practice networks, a pfSense firewall, and VPN access.}
+    \resumeItem{Built and managed a Proxmox range with \textbf{20+ VMs}, segmented networks, a pfSense firewall, and VPN access.}
   \resumeItemListEnd
 \resumeSubHeadingListEnd
 
