@@ -109,6 +109,7 @@
     \resumeItem{Designed and implemented \textbf{Linux kernel IMA extensions} for policy-controlled eBPF loading, measurement, and appraisal, with PKCS\#7 signature verification and TPM-backed attestation.}
     \resumeItem{Built \textbf{RCU-based, race-safe reappraisal and revocation} of resident eBPF programs; removed references across links, pins, file descriptors, tail-call maps, and cgroup attachments.}
     \resumeItem{Integrated signed loading and recovery with \textbf{Cilium's networking datapath}; evaluated remediation across 34 purge configurations with zero residual eBPF programs; wrote the resulting manuscript as first author.}
+    \resumeItem{Reproducing OS-CFI's origin-sensitive design to evaluate \textbf{eBPF-based Linux kernel control-flow integrity}.}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -127,8 +128,8 @@
     {\textbf{RISC-V Operating System Kernel} $|$ \emph{C/C++, RISC-V Assembly}}{2024; 2026 -- Present}
   \resumeItemListStart
     \resumeItem{Built a C-based RISC-V kernel (ECE 391) with \textbf{process management, IPC, and device drivers}; ported Doom and Rogue to student-built kernels.}
-    \resumeItem{Porting and redesigning the kernel in \textbf{C++23} for ECE 498OS with \textbf{symmetric multiprocessing (SMP)}, cooperative scheduling, CPU-local state, IPI-based wakeups, and RAII synchronization.}
-    \resumeItem{Implemented kernel-backed \textbf{C++ allocation and runtime hooks}, smart-pointer ownership, polymorphic I/O, and typed intrusive containers for scheduler and filesystem lists.}
+    \resumeItem{Porting and redesigning the kernel in \textbf{C++23} for ECE 498OS with \textbf{multi-core support}, cooperative scheduling, CPU-local state, IPI-based wakeups, and RAII synchronization.}
+    \resumeItem{Implemented kernel-backed \textbf{C++ allocation and runtime hooks}, polymorphic I/O, and typed intrusive containers for scheduler and filesystem lists.}
   \resumeItemListEnd
   \resumeProjectHeading
     {\textbf{Out-of-Order RISC-V Processor} $|$ \emph{SystemVerilog, ECE 411, Team of 3}}{Spring 2026}
@@ -141,10 +142,10 @@
 \section{Teaching \& Leadership}
 \resumeSubHeadingListStart
   \resumeSubheading
-    {ECE 391 Teaching Assistant}{January 2025 -- Present}
+    {ECE 391 Teaching Assistant / Course Assistant}{January 2025 -- Present}
     {ECE Department, University of Illinois Urbana-Champaign}{}
   \resumeItemListStart
-    \resumeItem{Promoted from Course Assistant to TA; support \textbf{20+ students weekly} in a 250+ student RISC-V OS course.}
+    \resumeItem{Lead discussions and support \textbf{20+ students weekly} in office hours for a 250+ student RISC-V OS course.}
     \resumeItem{Cut \textbf{autograder runtime in half} across all test cases by removing redundant runs and caching builds.}
   \resumeItemListEnd
 
@@ -152,17 +153,17 @@
     {Admin \& Purple Team Lead}{September 2023 -- Present}
     {SIGPwny, cybersecurity club at the University of Illinois Urbana-Champaign}{}
   \resumeItemListStart
-    \resumeItem{Built and managed a Proxmox range with \textbf{20+ VMs}, segmented networks, a pfSense firewall, and VPN access.}
-    \resumeItem{Authored \textbf{25+ reverse-engineering and exploitation challenges} for UIUCTF and SIGPwny; led advanced security workshops for 50+ club members.}
+    \resumeItem{Built and maintained \textbf{multiple Proxmox instances} for a networking and security practice range, with \textbf{20+ VMs}, segmented networks, VPN access, and pfSense/OPNsense firewalls.}
+    \resumeItem{Authored \textbf{30+ CTF challenges} for UIUCTF and SIGPwny; led numerous advanced workshops for 50+ club members.}
   \resumeItemListEnd
 \resumeSubHeadingListEnd
 
 \section{Technical Skills}
 \begin{itemize}[leftmargin=0.15in,label={}]
   \small{\item{
-    \textbf{Languages:} C, C++, Python, Bash, x86 and RISC-V Assembly, SystemVerilog \\
+    \textbf{Languages:} C, C++, Python, Go, Bash, x86 and RISC-V Assembly, SystemVerilog \\
     \textbf{Systems:} Linux kernel, operating systems, device drivers, IPC, RCU, eBPF, LLVM \\
-    \textbf{Networking \& Infrastructure:} Cilium, container networking, pfSense, VPNs, Proxmox \\
+    \textbf{Networking \& Infrastructure:} Cilium, container networking, pfSense, OPNsense, VPNs, Proxmox \\
     \textbf{Certifications:} OSED, OSCP+, Certified CyberDefender (CCD)
   }}
 \end{itemize}
