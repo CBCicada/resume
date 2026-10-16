@@ -1,14 +1,15 @@
-NAME := resume
-TEXS := $(wildcard *.tex)
+RESUMES := resume_general resume_systems resume_security
+PDFS := $(addsuffix .pdf,$(RESUMES))
+AUX_EXTS := aux fdb_latexmk fls log out synctex.gz
 
 .PHONY: all clean
 
-all: $(NAME).pdf
+# Build all variants with make, or one with make resume_systems.pdf.
+all: $(PDFS)
 
-$(NAME).pdf: $(TEXS)
-	pdflatex -interaction=nonstopmode -halt-on-error $(NAME).tex
-	pdflatex -interaction=nonstopmode -halt-on-error $(NAME).tex
+$(PDFS): %.pdf: %.tex
+	pdflatex -interaction=nonstopmode -halt-on-error $<
+	pdflatex -interaction=nonstopmode -halt-on-error $<
 
 clean:
-	rm -f $(NAME).aux $(NAME).fdb_latexmk $(NAME).fls $(NAME).log
-	rm -f $(NAME).out $(NAME).pdf $(NAME).synctex.gz
+	rm -f $(PDFS) $(foreach ext,$(AUX_EXTS),$(addsuffix .$(ext),$(RESUMES)))
